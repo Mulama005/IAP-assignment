@@ -22,6 +22,6 @@ $conf['mail_type']    = 'smtp';
 $conf['smtp_host']    = 'smtp.gmail.com';
 $conf['smtp_user']    = 'bonimechii80@gmail.com';
 $conf['smtp_pass']    = 'igfevzjmdjupwtik'; // Gmail App Password
-$conf['smtp_port']    = 587;   // Gmail STARTTLS port
-$conf['smtp_secure']  = 'tls'; // ✅ fixed typo
-$conf['smtp_debug']   = false;  // true = show SMTP logs, false = disable
+$conf['smtp_port']    = 587;   
+$conf['smtp_secure']  = 'tls'; 
+$conf['smtp_debug']   = false;  
