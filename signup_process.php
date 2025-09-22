@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/ClassAutoLoad.php';
 require 'db.php';
-require 'conf.php'; // include your config
+require 'conf.php'; 
 
 // Composer autoloader for PHPMailer
 require __DIR__ . '/vendor/autoload.php';
@@ -9,30 +9,30 @@ require __DIR__ . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// -----------------------------
-// Reusable function to send email
-// -----------------------------
+
+
+
 function sendWelcomeEmail($toEmail, $toName, $conf) {
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP server settings
+        
         $mail->isSMTP();
         $mail->Host       = $conf['smtp_host'];
         $mail->SMTPAuth   = true;
         $mail->Username   = $conf['smtp_user'];
         $mail->Password   = $conf['smtp_pass'];
-        $mail->SMTPSecure = $conf['smtp_secure']; // "tls" or "ssl"
+        $mail->SMTPSecure = $conf['smtp_secure']; 
         $mail->Port       = $conf['smtp_port'];
 
-        // Debug (0 = off, 2 = detailed logs)
+       
         $mail->SMTPDebug = $conf['smtp_debug'] ? 2 : 0;
 
-        // Sender & recipient
+        
         $mail->setFrom($conf['smtp_user'], $conf['site_name']);
         $mail->addAddress($toEmail, $toName);
 
-        // Email content
+        
         $mail->isHTML(true);
         $mail->Subject = 'Welcome to ' . $conf['site_name'] . '!';
 
@@ -68,9 +68,7 @@ function sendWelcomeEmail($toEmail, $toName, $conf) {
     }
 }
 
-// -----------------------------
-// Process signup form
-// -----------------------------
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name     = trim($_POST['name']);
     $email    = trim($_POST['email']);

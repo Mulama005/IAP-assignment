@@ -1,20 +1,16 @@
 <?php
-// ✅ Use Composer autoloader
+
 require __DIR__ . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// -----------------------------
-// Reusable sendMail function
-// -----------------------------
+
 function sendMail($toEmail, $toName, $subject, $body) {
     $mail = new PHPMailer(true);
 
     try {
-        // -----------------------------
-        // SMTP server configuration
-        // -----------------------------
+       
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
@@ -23,15 +19,11 @@ function sendMail($toEmail, $toName, $subject, $body) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use TLS
         $mail->Port       = 587;
 
-        // -----------------------------
-        // Sender & recipient
-        // -----------------------------
+        
         $mail->setFrom('bonimechii80@gmail.com', 'Task App');
         $mail->addAddress($toEmail, $toName);
 
-        // -----------------------------
-        // Email content
-        // -----------------------------
+        
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body    = $body;
@@ -44,9 +36,7 @@ function sendMail($toEmail, $toName, $subject, $body) {
     }
 }
 
-// -----------------------------
-// Collect form data
-// -----------------------------
+
 $email = $_POST['email'] ?? '';
 $name  = $_POST['name'] ?? '';
 

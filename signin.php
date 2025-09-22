@@ -1,14 +1,14 @@
 <?php
-require_once "Layouts/layouts.php";   // include the class
+require_once "Layouts/layouts.php";  
 
 $conf = [
     "site_name" => "Task app",
     "site_lang" => "en"
 ];
 
-$layout = new Layouts();      // create an object
-$layout->header($conf);       // header
-$layout->navbar($conf);       // navbar
+$layout = new Layouts();      
+$layout->header($conf);       
+$layout->navbar($conf);       
 ?>
 
 <h2>Sign In</h2>
@@ -28,5 +28,5 @@ $layout->navbar($conf);       // navbar
 </form>
 
 <?php
-$layout->footer($conf);       // footer
+$layout->footer($conf);       
 ?>

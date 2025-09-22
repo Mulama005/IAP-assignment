@@ -10,7 +10,7 @@ class Layouts {
       <meta name="description" content="">
       <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
       <meta name="generator" content="Astro v5.13.2">
-      <title>Jumbotron example · Bootstrap v5.3</title>
+      <title>Mulama Enterprise</title>
       <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <meta name="theme-color" content="#712cf9">
    </head>

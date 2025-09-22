@@ -6,9 +6,9 @@ $conf = [
     "site_lang" => "en"
 ];
 
-$layout = new Layouts();      // create an object
-$layout->header($conf);       // call header
-$layout->navbar($conf);       // call navbar
-$layout->banner($conf);       // call banner
-$layout->footer($conf);       // call footer
+$layout = new Layouts();      
+$layout->header($conf);       
+$layout->navbar($conf);       
+$layout->banner($conf);       
+$layout->footer($conf);       
 ?>
